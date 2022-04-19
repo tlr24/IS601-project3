@@ -1,0 +1,6 @@
+[2022-04-19 01:33:04,054] [114] 172.24.0.1 requested http://localhost/about [INFO] in __init__: localhost GET 200
+[2022-04-19 01:33:17,389] [114] 172.24.0.1 requested http://localhost/welcome [INFO] in __init__: localhost GET 200
+[2022-04-19 01:33:18,037] [114] 172.24.0.1 requested http://localhost/ [INFO] in __init__: localhost GET 200
+[2022-04-19 01:33:19,404] [114] 172.24.0.1 requested http://localhost/login [INFO] in __init__: localhost GET 200
+[2022-04-19 01:33:25,129] [114] 172.24.0.1 requested http://localhost/login [INFO] in __init__: localhost POST 302
+[2022-04-19 01:33:25,144] [114] 172.24.0.1 requested http://localhost/login [INFO] in __init__: localhost GET 200

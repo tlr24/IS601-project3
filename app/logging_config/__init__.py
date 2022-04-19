@@ -28,6 +28,9 @@ def after_request_logging(response):
 
     log = logging.getLogger("myApp")
     log.info("My App Logger")
+
+    log = logging.getLogger("requests")
+    log.info(response.status_code)
     return response
 
 
@@ -51,8 +54,7 @@ LOGGING_CONFIG = {
         },
         'RequestFormatter': {
             '()': 'app.logging_config.log_formatters.RequestFormatter',
-            'format': '[%(asctime)s] [%(process)d] %(remote_addr)s requested %(url)s'
-                        '%(levelname)s in %(module)s: %(message)s'
+            'format': '[%(asctime)s] [%(process)d] %(remote_addr)s requested %(url)s [%(levelname)s] in %(module)s: %(host)s %(request_method)s %(message)s'
         }
     },
     'handlers': {
@@ -128,6 +130,11 @@ LOGGING_CONFIG = {
         },
         'myApp': {  # if __name__ == '__main__'
             'handlers': ['file.handler.myapp'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'requests': {  # if __name__ == '__main__'
+            'handlers': ['file.handler.request'],
             'level': 'DEBUG',
             'propagate': False
         },
