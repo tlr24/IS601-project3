@@ -1,13 +1,13 @@
 # Project Setup
 
-[![Production Workflow](https://github.com/kaw393939/docker_flask/actions/workflows/prod.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/prod.yml)
+[![Production Workflow](https://img.shields.io/github/workflow/status/tlr24/IS601-project3/Production%20Workflow%201?label=Production%20Workflow%201&logo=github)](https://github.com/tlr24/is601-project3/actions/workflows/prod.yml)
 
-* [Production Deployment](https://kwilliam-prod.herokuapp.com/)
+* [Production Deployment](https://tlr24-is601-prod3.herokuapp.com/)
 
 
-[![Development Workflow](https://github.com/kaw393939/docker_flask/actions/workflows/dev.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/dev.yml)
+[![Development Workflow](https://img.shields.io/github/workflow/status/tlr24/IS601-project3/Development%20Workflow%203.8?label=Development%20Workflow%203.8&logo=github)](https://github.com/tlr24/is601-project3/actions/workflows/dev.yml)
 
-* [Developmental Deployment](https://kwilliam-dev.herokuapp.com/)
+* [Developmental Deployment](https://tlr24-is601-dev3.herokuapp.com/)
 
 ## Setting up CI/CD
 

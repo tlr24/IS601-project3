@@ -28,6 +28,13 @@ def after_request_logging(response):
 
     log = logging.getLogger("myApp")
     log.info("My App Logger")
+
+    # logging requests
+    log = logging.getLogger("requests")
+    log.info(response.status_code)
+    # logging to debug
+    log = logging.getLogger("debug")
+    log.debug("Testing debug log messages")
     return response
 
 
@@ -51,8 +58,7 @@ LOGGING_CONFIG = {
         },
         'RequestFormatter': {
             '()': 'app.logging_config.log_formatters.RequestFormatter',
-            'format': '[%(asctime)s] [%(process)d] %(remote_addr)s requested %(url)s'
-                        '%(levelname)s in %(module)s: %(message)s'
+            'format': '[%(asctime)s] [%(process)d] %(remote_addr)s requested %(url)s [%(levelname)s] in %(module)s: %(host)s %(request_method)s %(message)s'
         }
     },
     'handlers': {
@@ -80,6 +86,13 @@ LOGGING_CONFIG = {
             'class': 'logging.handlers.RotatingFileHandler',
             'formatter': 'RequestFormatter',
             'filename': 'app/logs/request.log',
+            'maxBytes': 10000000,
+            'backupCount': 5,
+        },
+        'file.handler.debug': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'standard',
+            'filename': 'app/logs/debug.log',
             'maxBytes': 10000000,
             'backupCount': 5,
         },
@@ -128,6 +141,16 @@ LOGGING_CONFIG = {
         },
         'myApp': {  # if __name__ == '__main__'
             'handlers': ['file.handler.myapp'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'requests': {  # if __name__ == '__main__'
+            'handlers': ['file.handler.request'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'debug': {  # if __name__ == '__main__'
+            'handlers': ['file.handler.debug'],
             'level': 'DEBUG',
             'propagate': False
         },
