@@ -17,10 +17,11 @@ song = Blueprint('songs', __name__, template_folder='templates')
 def song_upload():
     form = csv_upload()
     if form.validate_on_submit():
-        log = logging.getLogger("myApp")
+        log = logging.getLogger("csv")
         filename = secure_filename(form.file.data.filename)
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
         form.file.data.save(filepath)
+        log.info("User " + str(current_user.get_id()) + " uploaded file: " + filename)
         # user = current_user
         list_of_songs = []
         with open(filepath) as file:
