@@ -1,8 +1,10 @@
 import logging
+import os
 from logging.config import dictConfig
 
 import flask
 from flask import request, current_app
+from app import config
 
 from app.logging_config.log_formatters import RequestFormatter
 
@@ -39,14 +41,13 @@ def after_request_logging(response):
 
 
 @log_con.before_app_first_request
-def configure_logging():
+def setup_logs():
+    # set the name of the apps log folder to logs
+    logdir = config.Config.LOG_DIR
+    # make a directory if it doesn't exist
+    if not os.path.exists(logdir):
+        os.mkdir(logdir)
     logging.config.dictConfig(LOGGING_CONFIG)
-    log = logging.getLogger("myApp")
-    log.info("My App Logger")
-    log = logging.getLogger("myerrors")
-    log.info("THis broke")
-
-
 
 
 LOGGING_CONFIG = {
