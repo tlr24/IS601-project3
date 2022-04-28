@@ -31,9 +31,21 @@ def song_upload():
         current_user.songs = list_of_songs
         db.session.commit()
 
-        #return redirect(url_for('songs.songs_browse'))
+        return redirect(url_for('songs.songs_browse'))
     try:
         return render_template('upload_songs.html', form=form)
     except TemplateNotFound:
         abort(404)
 
+@song.route('/songs', methods=['GET'], defaults={"page": 1})
+@song.route('/songs/<int:page>', methods=['GET'])
+@login_required
+def songs_browse(page):
+    page = page
+    per_page = 1000
+    pagination = Song.query.paginate(page, per_page, error_out=False)
+    data = pagination.items
+    try:
+        return render_template('browse_songs.html',data=data,pagination=pagination)
+    except TemplateNotFound:
+        abort(404)

@@ -167,3 +167,20 @@
 2022-04-28 03:44:08,778 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 03:44:08] "GET /songs/upload HTTP/1.1" 200 -
 2022-04-28 03:44:11,984 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 03:44:11] "POST /songs/upload HTTP/1.1" 200 -
 2022-04-28 03:49:59,226 [INFO] werkzeug:  * Detected change in '/home/myuser/app/__init__.py', reloading
+2022-04-28 04:17:02,287 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:17:02] "GET /songs/upload HTTP/1.1" 200 -
+2022-04-28 04:17:03,293 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:17:03] "GET /about HTTP/1.1" 200 -
+2022-04-28 04:17:03,912 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:17:03] "GET /songs/upload HTTP/1.1" 200 -
+2022-04-28 04:17:04,352 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:17:04] "GET /dashboard HTTP/1.1" 200 -
+2022-04-28 04:17:04,824 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:17:04] "GET /songs/upload HTTP/1.1" 200 -
+2022-04-28 04:20:12,431 [INFO] werkzeug:  * Detected change in '/home/myuser/app/songs/__init__.py', reloading
+2022-04-28 04:20:13,876 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:20:13] "GET /songs/upload HTTP/1.1" 200 -
+2022-04-28 04:20:50,377 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:20:50] "GET /songs/upload HTTP/1.1" 200 -
+2022-04-28 04:20:51,317 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:20:51] "[35m[1mGET /songs HTTP/1.1[0m" 500 -
+2022-04-28 04:20:51,336 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:20:51] "GET /songs?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-04-28 04:20:51,338 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:20:51] "GET /songs?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-04-28 04:20:51,349 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:20:51] "GET /songs?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-04-28 04:20:51,363 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:20:51] "[36mGET /songs?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-04-28 04:21:46,730 [INFO] werkzeug:  * Detected change in '/home/myuser/app/songs/__init__.py', reloading
+2022-04-28 04:23:25,217 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:23:25] "GET /songs HTTP/1.1" 200 -
+2022-04-28 04:23:37,616 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:23:37] "GET /songs/upload HTTP/1.1" 200 -
+2022-04-28 04:23:38,657 [INFO] werkzeug: 172.25.0.1 - - [28/Apr/2022 04:23:38] "GET /songs HTTP/1.1" 200 -
