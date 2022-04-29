@@ -1,5 +1,4 @@
 import os
-from app.logging_config import log_con
 
 
 def test_request_log_created():

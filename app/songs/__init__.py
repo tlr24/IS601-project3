@@ -32,7 +32,7 @@ def song_upload():
         current_user.songs = list_of_songs
         db.session.commit()
 
-        return redirect(url_for('songs.songs_browse'))
+        return redirect(url_for('songs.songs_browse'), 302)
     try:
         return render_template('upload_songs.html', form=form)
     except TemplateNotFound:

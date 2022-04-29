@@ -30,12 +30,13 @@ def application():
 
 
 @pytest.fixture()
-def add_user(application):
+def add_user(application, client):
     """Adds a user when running the test"""
-    with application.app_context():
-        user = User('t@gmail.com', '12345678')
-        db.session.add(user)
-        db.session.commit()
+    client.post("register", data={"email": "a@a.com", "password": "12345678", "confirm": "12345678"})
+    #with application.app_context():
+        #user = User('t@gmail.com', '12345678')
+        #db.session.add(user)
+        #db.session.commit()
 
 
 @pytest.fixture()
