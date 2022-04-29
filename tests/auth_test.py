@@ -63,3 +63,12 @@ def test_denied_dashboard_access(client):
         response = client.get("/login")
         # check for flash message
         assert b"Please log in to access this page." in response.data
+
+def test_denied_csv_upload_access(client):
+    """Testing denying access to uploading CSV files"""
+    response = client.get("/songs/upload")
+    assert "/login?next=%2Fsongs%2Fupload" == response.headers["Location"]
+    with client:
+        response = client.get("/login")
+        # check for flash message
+        assert b"Please log in to access this page." in response.data
