@@ -44,3 +44,14 @@ def test_successful_login(client, add_user):
     with client:
         client.get("/")
         assert session["_user_id"] == user_id
+
+def test_allowing_dashboard_access(client, add_user):
+    """Tests allowing access to the dashboard for logged-in users"""
+    response = client.post("/login", data={"email": "a@a.com", "password": "12345678"})
+    assert "/dashboard" == response.headers["Location"]
+    # check that we can access the dashboard while logged in
+    response_2 = client.get("/dashboard")
+    assert response_2.status_code == 200
+    # check for welcome flash message
+    assert b"Welcome" in response_2.data
+
