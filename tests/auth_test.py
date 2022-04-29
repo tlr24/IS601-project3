@@ -58,7 +58,7 @@ def test_allowing_dashboard_access(client, add_user):
 def test_denied_dashboard_access(client):
     """Testing denying access to the dashboard for not logged-in users"""
     response = client.get("/dashboard")
-    assert "/login?next=%2Fdashboard" == response.headers["Location"]
+    assert "/login?next=%2Fdashboard" in response.headers["Location"]
     with client:
         response = client.get("/login")
         # check for flash message
