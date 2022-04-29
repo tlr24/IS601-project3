@@ -27,3 +27,20 @@ def test_successful_register(client):
     # test that the user was inserted into the database
     with client.application.app_context():
         assert User.query.filter_by(email="a@a.com").first() is not None
+
+def test_successful_login(client, add_user):
+    """Tests successful login"""
+    # test that viewing the page renders without template errors
+    assert client.get("/login").status_code == 200
+
+    # test that successful login redirects to the index page
+    response = client.post("/login", data={"email": "a@a.com", "password": "12345678"})
+    assert response.headers["Location"] == "/dashboard"
+
+    with client.application.app_context():
+        user_id = User.query.filter_by(email="a@a.com").first().get_id()
+
+    # check that the login request set the user_id in the session
+    with client:
+        client.get("/")
+        assert session["_user_id"] == user_id
