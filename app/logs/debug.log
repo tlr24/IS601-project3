@@ -1608,3 +1608,31 @@
 2022-04-29 00:55:19,756 [DEBUG] debug: Testing debug log messages
 2022-04-29 00:55:19,795 [DEBUG] debug: Testing debug log messages
 2022-04-29 00:55:19,801 [DEBUG] debug: <_io.BufferedReader name='/home/myuser/tests/../app/uploads/music.csv'>
+2022-04-29 00:56:46,751 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:46,899 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:47,238 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:47,270 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:47,697 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:47,932 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:48,273 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:48,670 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:48,922 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:48,984 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:49,290 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:49,506 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:49,858 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:49,988 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:50,462 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:51,026 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:51,501 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:52,049 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:52,560 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:53,062 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:53,528 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:53,906 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:54,439 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:54,845 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:55,037 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:55,333 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:55,386 [DEBUG] debug: Testing debug log messages
+2022-04-29 00:56:55,393 [DEBUG] debug: <_io.BufferedReader name='/home/myuser/tests/../app/uploads/music.csv'>

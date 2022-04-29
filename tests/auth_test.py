@@ -55,3 +55,11 @@ def test_allowing_dashboard_access(client, add_user):
     # check for welcome flash message
     assert b"Welcome" in response_2.data
 
+def test_denied_dashboard_access(client):
+    """Testing denying access to the dashboard for not logged-in users"""
+    response = client.get("/dashboard")
+    assert "/login?next=%2Fdashboard" == response.headers["Location"]
+    with client:
+        response = client.get("/login")
+        # check for flash message
+        assert b"Please log in to access this page." in response.data
