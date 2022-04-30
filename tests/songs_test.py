@@ -7,10 +7,10 @@ from app.db.models import db, Song, User
 
 
 def test_csv_upload(client, add_user):
-    """Test that we can upload csvs"""
+    """Test that we can upload and process csvs"""
     log = logging.getLogger("debug")
     root = os.path.dirname(os.path.abspath(__file__))
-    csv_file = os.path.join(root, '../app/uploads/music.csv')
+    csv_file = os.path.join(root, '../uploads/music_short.csv')
     # login to upload a csv file
     response = client.post("/login", data={"email": "a@a.com", "password": "12345678"})
     assert "/dashboard" == response.headers["Location"]
@@ -23,10 +23,12 @@ def test_csv_upload(client, add_user):
     # check that the file was uploaded
     assert os.path.exists(csv_file) == True
 
-    # test that the user was inserted into the database
+    # test that the csv file was processed and the songs were inserted into the database
     with client.application.app_context():
         log.debug(file)
-        # assert Song.query.filter_by(title="Down").first() is not None
+        assert Song.query.filter_by(title="Down").first() is not None
+        assert Song.query.filter_by(title="Sugar (feat. Francesco Yates)").first() is not None
+        assert Song.query.filter_by(title="Prayer In C (Robin Schulz Radio Edit)").first() is not None
 
 def test_adding_songs(application):
     """Test adding songs"""
@@ -46,6 +48,6 @@ def test_adding_songs(application):
         song2 = Song.query.filter_by(title='New Song').first()
         assert song2.title == "New Song"
         # checking cascade delete
-        db.session.delete(user)
-        assert db.session.query(User).count() == 0
-        assert db.session.query(Song).count() == 0
+        #db.session.delete(user)
+        #assert db.session.query(User).count() == 0
+        #assert db.session.query(Song).count() == 0
