@@ -7,7 +7,7 @@ from app.db.models import db, Song, User
 
 
 def test_csv_upload(client, add_user):
-    """Test that we can upload csvs"""
+    """Test that we can upload and process csvs"""
     log = logging.getLogger("debug")
     root = os.path.dirname(os.path.abspath(__file__))
     csv_file = os.path.join(root, '../uploads/music_short.csv')
@@ -23,7 +23,7 @@ def test_csv_upload(client, add_user):
     # check that the file was uploaded
     assert os.path.exists(csv_file) == True
 
-    # test that the user was inserted into the database
+    # test that the csv file was processed and the songs were inserted into the database
     with client.application.app_context():
         log.debug(file)
         assert Song.query.filter_by(title="Down").first() is not None
